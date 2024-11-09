@@ -4,7 +4,7 @@ import http from '@/plugins/axios'
 import Button from 'primevue/button'
 import Dialog from 'primevue/dialog'
 import { onMounted, ref } from 'vue'
- 
+
 const ENDPOINT = 'series'
 let series = ref<Serie[]>([])
 const emit = defineEmits(['edit'])
@@ -14,7 +14,7 @@ const mostrarConfirmDialog = ref<boolean>(false)
 async function obtenerLista() {
     series.value = await http.get(ENDPOINT).then((response) => response.data)
 }
- 
+
 function emitirEdicion(serie: Serie) {
     emit('edit', serie)
 }
@@ -47,6 +47,7 @@ defineExpose({ obtenerLista })
                     <th>Director</th>
                     <th>Temporadas</th>
                     <th>Fecha de Estreno</th>
+                    <th>clasificacion</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -58,6 +59,7 @@ defineExpose({ obtenerLista })
                     <td>{{ serie.director }}</td>
                     <td>{{ serie.temporadas }}</td>
                     <td>{{ serie.fechaEstreno }}</td>
+                    <td>{{ serie.tipoClasificasion }}</td>
                     <td>
                         <button @click="emitirEdicion(serie)">Editar</button>
                         <button @click="mostrarEliminarConfirm(serie)">eliminar</button>

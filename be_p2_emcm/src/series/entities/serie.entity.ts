@@ -22,11 +22,14 @@ export class Serie {
   @Column('varchar', { length: 100 })
   director: string;
 
-  @Column('integer',{name:'temporadas'})
+  @Column('integer', { name: 'temporadas' })
   temporadas: number;
 
-  @Column('date', {name:'fecha_Estreno' })
+  @Column('date', { name: 'fecha_Estreno' })
   fechaEstreno: Date;
+
+  @Column('varchar', { length: 30 })
+  tipoClasificasion: string;
 
   @UpdateDateColumn({ name: 'fecha_modificacion' })
   fechaModificacion: Date;

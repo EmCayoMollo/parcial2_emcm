@@ -54,4 +54,13 @@ __decorate([
     (0, class_validator_1.IsDateString)({}, { message: 'El campo fechaEstreno debe ser de tipo fecha' }),
     __metadata("design:type", Date)
 ], CreateSerieDto.prototype, "fechaEstreno", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'El campo tipo es obligatorio' }),
+    (0, class_validator_1.IsString)({ message: 'El campo tipo debe ser tipo cadena' }),
+    (0, class_validator_1.MaxLength)(30, {
+        message: 'El campo director no de ser mayor a 30 caracteres',
+    }),
+    __metadata("design:type", String)
+], CreateSerieDto.prototype, "tipoClasificasion", void 0);
 //# sourceMappingURL=create-serie.dto.js.map

@@ -40,7 +40,8 @@ async function handleSave() {
             sinopsis: serie.value.sinopsis,
             director: serie.value.director,
             temporadas: serie.value.temporadas,
-            fechaEstreno: serie.value.fechaEstreno
+            fechaEstreno: serie.value.fechaEstreno,
+            tipoClasificasion: serie.value.tipoClasificasion,
         }
         if (props.modoEdicion) {
             await http.patch(`${ENDPOINT}/${serie.value.id}`, body)
@@ -82,6 +83,26 @@ async function handleSave() {
                 <InputText id="fechaLanzamiento" v-model="serie.fechaEstreno.getFullYear.toString" mask="2012-12-12"
                     placeholder="2012-12-12" class="flex-auto" autocomplete="off" />
             </div>
+
+
+            <!-- <script setup>
+        <div class="flex items-center gap-4 mb-4">
+            <Select v-model="seleccionar" :options="categoria" 
+            optionLabel="name" placeholder="Seleccionar Clasificasion" class="font-semibold w-4" />
+        
+
+        const seleccionar = ref();
+        const categoria = ref([
+                    { name: 'Todo publico', code: 'A' },
+                    { name: 'Para niños', code: 'B' },
+                    { name: 'mayores a 12 años', code: 'B12' },
+                    { name: 'mayores a 15 años', code: 'B15' },
+                    { name: 'mayores a 18 años', code: 'B18' }
+        ]);
+    </div>
+        </script> -->
+
+
             <div class="flex justify-end gap-2">
                 <Button type="button" label="Cancelar" icon="pi pi-times" severity="secondary"
                     @click="dialogVisible = false"></Button>

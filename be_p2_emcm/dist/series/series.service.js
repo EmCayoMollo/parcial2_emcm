@@ -27,6 +27,7 @@ let SeriesService = class SeriesService {
             sinopsis: createSerieDto.sinopsis.trim(),
             director: createSerieDto.director.trim(),
             temporadas: createSerieDto.temporadas,
+            tipoClasificasion: createSerieDto.tipoClasificasion.trim()
         });
         if (existe)
             throw new common_1.ConflictException('La serie ya existe');
@@ -36,6 +37,7 @@ let SeriesService = class SeriesService {
         serie.director = createSerieDto.director.trim();
         serie.temporadas = createSerieDto.temporadas;
         serie.fechaEstreno = createSerieDto.fechaEstreno;
+        serie.tipoClasificasion = createSerieDto.tipoClasificasion.trim();
         return this.seriesRepository.save(serie);
     }
     async findAll() {
@@ -54,6 +56,7 @@ let SeriesService = class SeriesService {
         serie.director = updateSerieDto.director.trim();
         serie.temporadas = updateSerieDto.temporadas;
         serie.fechaEstreno = updateSerieDto.fechaEstreno;
+        serie.tipoClasificasion = updateSerieDto.tipoClasificasion.trim();
         const serieUpdate = Object.assign(serie, updateSerieDto);
         return this.seriesRepository.save(serieUpdate);
     }

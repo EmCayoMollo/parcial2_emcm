@@ -4,4 +4,5 @@ export declare class CreateSerieDto {
     readonly director: string;
     readonly temporadas: number;
     readonly fechaEstreno: Date;
+    readonly tipoClasificasion: string;
 }

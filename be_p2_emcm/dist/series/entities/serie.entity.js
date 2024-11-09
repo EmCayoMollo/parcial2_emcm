@@ -39,6 +39,10 @@ __decorate([
     __metadata("design:type", Date)
 ], Serie.prototype, "fechaEstreno", void 0);
 __decorate([
+    (0, typeorm_1.Column)('varchar', { length: 30 }),
+    __metadata("design:type", String)
+], Serie.prototype, "tipoClasificasion", void 0);
+__decorate([
     (0, typeorm_1.UpdateDateColumn)({ name: 'fecha_modificacion' }),
     __metadata("design:type", Date)
 ], Serie.prototype, "fechaModificacion", void 0);
